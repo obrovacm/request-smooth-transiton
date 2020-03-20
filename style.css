@@ -1,0 +1,59 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: linear-gradient(to right, #ccc, yellow, lightblue, white);
+  width: 1200vw;
+  height: 99vh;
+  position: relative;
+}
+
+.kvadrat {
+  position: absolute;
+  width: 100px;
+  top: 250px;
+  height: 100px;
+  box-shadow: 2px 2px 5px darkolivegreen;
+
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.kvadrat p{
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-shadow: 1px 1px 4px grey;
+}
+
+#k1 {
+  background: purple;
+  left: 2000px;
+}
+
+#k2 {
+  background: blue;
+  right: 50%;
+}
+
+#k3 {
+  background: pink;
+  right: 2000px;
+}
+
+.btns {
+  position: fixed;
+  top: 150px;
+  left: 50px;
+}
+h4{
+  margin-bottom: 10px;
+}
+.btn{
+  box-shadow: 1px 1px 4px darkolivegreen;
+}
+
