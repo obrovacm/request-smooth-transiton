@@ -1,13 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+
 body{
   margin: 0;
   padding: 0;
 }
 
 .container {
+  position: absolute;
+  top: 0;
+  left: 0;
   background: linear-gradient(to right, #ccc, yellow, lightblue, white);
   width: 1200vw;
-  height: 99vh;
-  position: relative;
+  height: calc(100vh - 16px);
 }
 
 .kvadrat {
@@ -42,6 +48,11 @@ body{
 
 #k3 {
   background: pink;
+  right: 2500px;
+}
+
+#k4 {
+  background: darkolivegreen;
   right: 2000px;
 }
 
@@ -57,3 +68,27 @@ h4{
   box-shadow: 1px 1px 4px darkolivegreen;
 }
 
+.screen-center{
+  position: fixed;
+  top: 0;
+  left: 50%;
+}
+
+.screen-center .square{
+  position: absolute;
+  top: 240px;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  
+  border: 5px dashed tomato;
+}
+
+.screen-center .square::after{
+  position: absolute;
+  content: 'screen center';
+  width: 100%;
+  height: 15px;
+  bottom: -20px;
+  text-align: center;
+}
