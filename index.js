@@ -12,7 +12,10 @@ let b3 = document.querySelector("#b3");
 //////////////////////////////////////////////////////////////////
 
 function scrollHorizontaly(target, duration){  
-  let targetPosition = target.getBoundingClientRect().left;
+  let targetCenter = target.getBoundingClientRect().width / 2;
+  let halfScreen = window.innerWidth / 2;
+  // let targetPosition = target.getBoundingClientRect().left;
+  let targetPosition = target.getBoundingClientRect().left - halfScreen + targetCenter;
   let startPosition = window.pageXOffset;
   
   let startTime, timeElapsed, animationDevelopmentAtMoment;
