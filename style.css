@@ -5,6 +5,13 @@
 body{
   margin: 0;
   padding: 0;
+  /* background:
+    radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
+    radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
+    linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
+    linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+    background-color: slategray;
+    background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px; */
 }
 
 .container {
@@ -12,7 +19,7 @@ body{
   top: 0;
   left: 0;
   background: linear-gradient(to right, #ccc, yellow, lightblue, white);
-  width: 1200vw;
+  width: 8000px;
   height: calc(100vh - 16px);
 }
 
@@ -32,7 +39,7 @@ body{
   margin: 0;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%) rotate(45deg);
   text-shadow: 1px 1px 4px grey;
 }
 
@@ -58,18 +65,25 @@ body{
 
 .btns {
   position: fixed;
-  top: 150px;
-  left: 50px;
+  top: 0;
+  padding-top: 30px;
+  width: 100vw;
+  text-align: center;
 }
 h4{
   margin-bottom: 10px;
 }
 .btn{
+  display: block;
   box-shadow: 1px 1px 4px darkolivegreen;
+  margin: 0 auto;
+  padding: .5em;
+  margin-bottom: 4px;
+  font-weight: bold;
 }
 
 .screen-center{
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 50%;
 }
@@ -80,7 +94,6 @@ h4{
   transform: translateX(-50%);
   width: 120px;
   height: 120px;
-  
   border: 5px dashed tomato;
 }
 
@@ -89,6 +102,7 @@ h4{
   content: 'screen center';
   width: 100%;
   height: 15px;
+  left: 0;
   bottom: -20px;
   text-align: center;
 }
