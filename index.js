@@ -1,5 +1,5 @@
-const container = document.querySelector(".container");
-const html = container.parentElement.parentElement;
+const root = document.querySelector("#root");
+const html = document.querySelector("html");
 
 const k1 = document.querySelector("#k1");
 const k2 = document.querySelector("#k2");
@@ -26,7 +26,7 @@ function scrollHorizontaly(target, duration){
   const halfScreen = window.innerWidth / 2;
   const targetPosition = target.getBoundingClientRect().left - halfScreen + targetWidthHalf;
   // viewport's starting scroll position
-  const startPosition = window.pageXOffset;
+  const startPosition = root.scrollLeft;
   requestAnimationFrame(scrollAnimation);
   
   // scroll animation definition
@@ -36,7 +36,7 @@ function scrollHorizontaly(target, duration){
     timeElapsed = currentTime - startTime;
 
     animationDevelopmentAtMoment = ease(timeElapsed, startPosition, targetPosition, duration);
-    html.scrollTo(animationDevelopmentAtMoment, 0);
+    root.scrollTo(animationDevelopmentAtMoment, 0);
     if(timeElapsed < duration) requestAnimationFrame(scrollAnimation);
   } 
   // ease function definition
@@ -51,3 +51,12 @@ function scrollHorizontaly(target, duration){
   // c - target (end) value
   // d - duration of transition between 'b' and 'c'
 };
+
+/////////////////////////////////////////////////////////////////
+// I had to add #root div because there seems to be a strange 
+// behavior on moblie screens without it. It could be related to
+// the fact that the container has 'position: absolute' and that 
+// body element is not stretched (has 'height: 0' in that case).
+// This means I had to change 'startPosition' from 'window.pageXOffset'
+// to 'root.scrollLeft'
+/////////////////////////////////////////////////////////////////

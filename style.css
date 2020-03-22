@@ -5,16 +5,22 @@
 body{
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
 }
 
-.container {
+#root{
+  position: relative;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+#container {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   background: linear-gradient(to right, #ccc, yellow, lightblue, white);
-  width: 8000px;
+  width: 7777px;
   height: 100vh;
 }
 
