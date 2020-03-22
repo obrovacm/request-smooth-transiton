@@ -1,25 +1,32 @@
-let container = document.querySelector(".container");
-let html = container.parentElement.parentElement;
+const container = document.querySelector(".container");
+const html = container.parentElement.parentElement;
 
-let k1 = document.querySelector("#k1");
-let k2 = document.querySelector("#k2");
-let k3 = document.querySelector("#k3");
-let k4 = document.querySelector("#k4");
+const k1 = document.querySelector("#k1");
+const k2 = document.querySelector("#k2");
+const k3 = document.querySelector("#k3");
+const k4 = document.querySelector("#k4");
 
-let b1 = document.querySelector("#b1");
-let b2 = document.querySelector("#b2");
-let b3 = document.querySelector("#b3");
-let b4 = document.querySelector("#b4");
+const b1 = document.querySelector("#b1");
+const b2 = document.querySelector("#b2");
+const b3 = document.querySelector("#b3");
+const b4 = document.querySelector("#b4");
+
+const scrollingTime = 1700;
+
+b1.addEventListener("click", ()=>{scrollHorizontaly(k1, scrollingTime)});
+b2.addEventListener("click",  ()=>{scrollHorizontaly(k2, scrollingTime)});
+b3.addEventListener("click",  ()=>{scrollHorizontaly(k3, scrollingTime)});
+b4.addEventListener("click",  ()=>{scrollHorizontaly(k4, scrollingTime)});
 
 //////////////////////////////////////////////////////////////////
 
 function scrollHorizontaly(target, duration){
   // centering viewport on the target 
-  let targetWidthHalf = target.getBoundingClientRect().width / 2;
-  let halfScreen = window.innerWidth / 2;
-  let targetPosition = target.getBoundingClientRect().left - halfScreen + targetWidthHalf;
+  const targetWidthHalf = target.getBoundingClientRect().width / 2;
+  const halfScreen = window.innerWidth / 2;
+  const targetPosition = target.getBoundingClientRect().left - halfScreen + targetWidthHalf;
   // viewport's starting scroll position
-  let startPosition = window.pageXOffset;
+  const startPosition = window.pageXOffset;
   requestAnimationFrame(scrollAnimation);
   
   // scroll animation definition
@@ -39,13 +46,8 @@ function scrollHorizontaly(target, duration){
     t--;
     return -c/2 * (t*(t-2) - 1) + b;
   };
-}
-
-//////////////////////////////////////////////////////////////////
-const scrollingTime = 1700;
-
-b1.addEventListener("click", ()=>{scrollHorizontaly(k1, scrollingTime)});
-b2.addEventListener("click",  ()=>{scrollHorizontaly(k2, scrollingTime)});
-b3.addEventListener("click",  ()=>{scrollHorizontaly(k3, scrollingTime)});
-b4.addEventListener("click",  ()=>{scrollHorizontaly(k4, scrollingTime)});
-
+  // t - time elapsed since the function is triggered
+  // b - start value
+  // c - target (end) value
+  // d - duration of transition between 'b' and 'c'
+};
